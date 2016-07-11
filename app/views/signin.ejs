@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+
+</head>
+<body>
+<% for(var i in messages){%>
+    <div class="flash"><%= messages[i]%></div>
+<%} %>
+<form action="/signin" method="post">
+    <div>
+        <labe>Username:</labe>
+        <input type="text" name="username">
+    </div>
+    <div>
+        <labe>Password:</labe>
+        <input type="password" name="password">
+    </div>
+    <div>
+        <input type="submit" value="Sign in">
+    </div>
+    <a href="/oauth/facebook">Sign in with Facebook</a>
+</form>
+</body>
+</html>
