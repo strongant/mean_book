@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
 
 </head>
+
 <body>
-<% for(var i in messages){%>
-    <div class="flash"><%= messages[i]%></div>
-<%} %>
-<form action="/signin" method="post">
-    <div>
-        <labe>Username:</labe>
-        <input type="text" name="username">
-    </div>
-    <div>
-        <labe>Password:</labe>
-        <input type="password" name="password">
-    </div>
-    <div>
-        <input type="submit" value="Sign in">
-    </div>
-    <a href="/oauth/facebook">Sign in with Facebook</a>
-</form>
+    <% for(var i in messages){%>
+        <div class="flash">
+            <%= messages[i]%>
+        </div>
+        <%} %>
+            <form action="/signin" method="post">
+                <div>
+                    <labe>Username:</labe>
+                    <input type="text" name="username">
+                </div>
+                <div>
+                    <labe>Password:</labe>
+                    <input type="password" name="password">
+                </div>
+                <div>
+                    <input type="submit" value="Sign in">
+                </div>
+                <!--<div>
+                    <a href="/oauth/facebook">Sign in with Facebook</a>
+                    <a href="/oauth/qq" onclick='toLogin()'>
+                        <img src="img/qq.png"></a>
+                </div>-->
+                <div>
+                  <a href="/oauth/facebook">Sign in with Facebook</a>
+                    <span id="qqLoginBtn"></span>
+                </div>
+
+
+            </form>
+            <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101330197" data-redirecturi="http://76fd6c17.ngrok.natapp.cn/oauth/qq/callback" charset="utf-8"></script>
+            <script src="js/login.js"></script>
 </body>
+
 </html>

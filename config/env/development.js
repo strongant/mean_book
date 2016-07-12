@@ -7,8 +7,8 @@ module.exports = {
     callbackURL: 'http://76fd6c17.ngrok.natapp.cn/oauth/facebook/callback'
   },
   qq: {
-    clientId: '101330197',
+    clientID: '101330197',
     clientSecret: 'b910f8888d71d4d53c9e24f2f43482ce',
-    callbackURL: 'http://76fd6c17.ngrok.natapp.cn/oauth/facebook/callback'
+    callbackURL: 'http://76fd6c17.ngrok.natapp.cn/oauth/qq/callback'
   }
 };
