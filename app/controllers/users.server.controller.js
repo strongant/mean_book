@@ -141,6 +141,7 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
     provider: profile.provider,
     providerId: profile.providerId
   }, function(err, user) {
+
     if (err) {
       return done(err);
     } else {

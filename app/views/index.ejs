@@ -2,10 +2,19 @@
 <html>
 
     <head>
-      <meta property="qc:admins" content="0337376531032666672736614100636" />
+      <meta property="qc:admins" content="0337376242575166727366141006367" />
 
       <title><%= title %></title></head>
     <body>
+      <% if(figureurl_qq_2){%>
+        <strong>用户QQ头像100x100:</strong>
+        <img src="<%= figureurl_qq_2 %>" alt="用户qq头像" />
+      <%}%>
+      <% if(figureurl_2){%>
+        <strong>用户头像100x100:</strong>
+        <img src='<%= figureurl_2 %>' alt="用户头像" />
+      <%}%>
+
     <% if(userFullName){%>
       <h2>Hello,<%= userFullName %></h2>
     <a href="/signout">Sign out</a>

@@ -9,6 +9,6 @@ module.exports = {
   qq: {
     clientID: '101330197',
     clientSecret: 'b910f8888d71d4d53c9e24f2f43482ce',
-    callbackURL: 'http://1998c26f.ngrok.natapp.cn/oauth/qq/callback'
+    callbackURL: 'http://f62e7e9.ngrok.natapp.cn/oauth/qq/callback'
   }
 };
