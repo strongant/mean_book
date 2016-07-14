@@ -4,19 +4,21 @@ var passport = require('passport'),
   //qq-token
   config = require('../config'),
   users = require('../../app/controllers/users.server.controller');
-/*
-passport.use(new qqStrategy({
-    clientID: client_id,
-    clientSecret: client_secret,
-    callbackURL: "http://127.0.0.1:3000/auth/qq/callback"
+
+passport.use(new QQStrategy({
+    clientID: config.qq.clientID,
+    clientSecret: config.qq.clientSecret,
+    callbackURL: "http://1998c26f.ngrok.natapp.cn/auth/qq/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate({ qqId: profile.id }, function (err, user) {
+    User.findOrCreate({
+      qqId: profile.id
+    }, function(err, user) {
       return done(err, user);
     });
   }
 ));
- */
+
 module.exports = function() {
   passport.use('qq-token', new QQStrategy({
       clientID: config.qq.clientID,
@@ -29,6 +31,9 @@ module.exports = function() {
 
       var providerData = profile;
       var _profile = JSON.parse(profile);
+      console.log('providerUserProfile:');
+      console.log(providerUserProfile);
+
       providerData.accessToken = accessToken;
       providerData.refreshToken = refreshToken;
       var providerUserProfile = {
@@ -37,13 +42,12 @@ module.exports = function() {
         gender: _profile.gender,
         province: _profile.province,
         provider: 'qq',
-        profiderId: _profile.id,
+        providerId: _profile.year,
         city: _profile.city,
         year: _profile.year,
         providerData: providerData
       };
-      console.log('providerUserProfile:');
-      console.log(providerUserProfile);
+
       users.saveOAuthUserProfile(req, providerUserProfile, done);
     }
   ));

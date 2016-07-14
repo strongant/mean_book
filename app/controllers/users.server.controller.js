@@ -138,12 +138,13 @@ exports.signout = function(req, res) {
 
 exports.saveOAuthUserProfile = function(req, profile, done) {
   User.findOne({
-    provider: profile.profider,
-    providerId: profile.profiderId
+    provider: profile.provider,
+    providerId: profile.providerId
   }, function(err, user) {
     if (err) {
       return done(err);
     } else {
+      console.log('saveOAuthUserProfile:' + user);
       if (!user) {
         var possibleUsername = profile.username || ((
           profile.email) ? profile.email.split('@')[0] : '');
@@ -153,6 +154,7 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
           user = new User(profile);
           user.save(function(err) {
             if (err) {
+              console.log(err);
               var message = _this.getErrorMessage(err);
               req.flash('error', message);
               return res.redirect('/signup');
