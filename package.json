@@ -35,7 +35,9 @@
     "passport-facebook": "^1.0.3",
     "passport-local": "~1.0.0",
     "passport-qq": "0.0.3",
-    "passport-qq2015": "^1.0.0"
+    "passport-qq2015": "^1.0.0",
+    "passport-twitter":"^1.0.2",
+    "passport-google-auth":"^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"
