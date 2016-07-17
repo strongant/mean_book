@@ -20,7 +20,7 @@
     "passport",
     "nodejs"
   ],
-  "repository": "git@github.com:strongant/mean_book.git",
+  "repository": "https://github.com/strongant/mean_book.git",
   "dependencies": {
     "body-parser": "^1.8.0",
     "compression": "^1.0.11",

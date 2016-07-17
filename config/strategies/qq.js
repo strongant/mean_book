@@ -5,19 +5,6 @@ var passport = require('passport'),
   config = require('../config'),
   users = require('../../app/controllers/users.server.controller');
 
-/*passport.use(new QQStrategy({
-    clientID: config.qq.clientID,
-    clientSecret: config.qq.clientSecret,
-    callbackURL: "http://1998c26f.ngrok.natapp.cn/auth/qq/callback"
-  },
-  function(req, accessToken, refreshToken, profile, done) {
-    User.findOrCreate({
-      qqId: profile.id
-    }, function(err, user) {
-      return done(err, user);
-    });
-  }
-));*/
 
 module.exports = function() {
   passport.use('qq-token', new QQStrategy({
