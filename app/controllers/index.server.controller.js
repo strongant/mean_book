@@ -24,6 +24,7 @@ exports.render = function(req, res) {
 
   res.render('index', {
     title: "Hello World",
+    user:JSON.stringify(req.user),
     userFullName: req.user ? req.user.username : '',
     figureurl_qq_2: figureurl_qq_2||'',
     figureurl_2: figureurl_2||''

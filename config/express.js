@@ -6,6 +6,7 @@ var config = require('./config'), express = require('express'), morgan = require
     flash = require('connect-flash'),passport = require('passport');
 module.exports = function () {
     var app = express();
+    app.use(express.static('./public'));
     if (process.env.NODE_ENV === 'development') {
         app.use(morgan('dev'));
     } else if (process.env.NODE_ENV === 'production') {
@@ -23,6 +24,6 @@ module.exports = function () {
     app.use(passport.session());
     require('../app/routes/index.server.routes.js')(app);
     require('../app/routes/users.server.routes.js')(app);
-    app.use(express.static('./public'));
+
     return app;
 }

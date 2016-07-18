@@ -1,29 +1,48 @@
 <!Doctype html>
-<html>
+<html xmlns:ng="http://angularjs.org">
 
     <head>
       <meta property="qc:admins" content="0337376242575166727366141006367" />
 
       <title><%= title %></title></head>
     <body>
-      <% if(figureurl_qq_2){%>
+      <!-- <% if(figureurl_qq_2){%>
         <strong>用户QQ头像100x100:</strong>
         <img src="<%= figureurl_qq_2 %>" alt="用户qq头像" />
       <%}%>
       <% if(figureurl_2){%>
         <strong>用户头像100x100:</strong>
         <img src='<%= figureurl_2 %>' alt="用户头像" />
-      <%}%>
+      <%}%> -->
 
-    <% if(userFullName){%>
-      <h2>Hello,<%= userFullName %></h2>
+    <% if(user){%>
+      <h2>Hello,<%= user %></h2>
     <a href="/signout">Sign out</a>
     <%}else{%>
     <a href="/signup">Signup</a>
     <a href="/signin">Signin</a>
     <%}%>
     <br>
-    <img src="img/idea.png" alt="Logo">
+    <!-- <img src="img/idea.png" alt="Logo"> -->
+    <section ng-view>
+    </section>
+
+
+    <script type="text/javascript">
+      window.user = <%- user || 'null'%>;
+    </script>
+
+
+
+    <script src="/lib/angular/angular.js" charset="utf-8"></script>
+<script src="/lib/angular-route/angular-route.js" charset="utf-8"></script>
+    <script src="/example/example.client.module.js" charset="utf-8"></script>
+<script src="/example/service/example.client.service.js" charset="utf-8"></script>
+    <script src="/example/controllers/example.client.controller.js" charset="utf-8"></script>
+<script src="/example/config/example.client.routes.js" charset="utf-8"></script>
+<script src="/users/users.client.module.js" charset="utf-8"></script>
+<script src="/users/services/authentication.client.service.js" charset="utf-8"></script>
+    <script src="/application.js" charset="utf-8"></script>
     </body>
 
 </html>
