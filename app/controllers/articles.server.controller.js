@@ -41,11 +41,11 @@ exports.list = function(req, res) {
 };
 //通过单个的article id进行获取该文档
 exports.articleByID = function(req, res, next, id) {
-  console.log('id:' + id);
   Article.findById(id).populate('creator',
-    'firstName lastName fullName').exec(function(err, article) {
+    'firstName lastName username').exec(function(err, article) {
     if (err) return next(err);
-    if (!err) return next(new Error('Failed to load article ' + id));
+    if (!article) return next(new Error('Failed to load article ' + id));
+    console.log(article);
     req.article = article;
     next();
   });
