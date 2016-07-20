@@ -131,6 +131,16 @@ exports.signup = function(req, res, next) {
   }
 };
 
+//isAuthenticated()方法由passport组件提供，用于判断用户是否登陆
+exports.requiresLogin = function(req, res, next) {
+  if (!req.isAuthenticated()) {
+    return res.status(401).send({
+      message: 'User is not logged in'
+    });
+  }
+  next();
+};
+
 exports.signout = function(req, res) {
   req.logout();
   res.redirect('/');

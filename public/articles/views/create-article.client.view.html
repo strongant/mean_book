@@ -1,0 +1,26 @@
+<section data-ng-controller = "ArticlesController">
+  <h1>New Article</h1>
+  <form data-ng-submit="create()" novalidate>
+    <div>
+      <label for="title">Title</label>
+      <div>
+        <input type="text" data-ng-model = "title"
+         id="title" placeholder="Title" required>
+      </div>
+      <label for="content">Title</label>
+      <div>
+        <textarea cols="30" rows="10"
+        data-ng-model = "content" id="content"
+        placeholder="Content" >
+
+        </textarea>
+      </div>
+      <div>
+        <input type="submit">
+      </div>
+      <div data-ng-show="error">
+        <strong data-ng-bind="error"></strong>
+      </div>
+    </div>
+  </form>
+</section>

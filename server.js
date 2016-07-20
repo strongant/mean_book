@@ -1,5 +1,6 @@
-var mongoose=require('./config/mongoose'),express = require('./config/express'),
-passport = require('./config/passport');
+var mongoose = require('./config/mongoose'),
+  express = require('./config/express'),
+  passport = require('./config/passport');
 var db = mongoose();
 var app = express();
 var passport = passport();
