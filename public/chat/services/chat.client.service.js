@@ -19,8 +19,6 @@ angular.module('chat').service('Socket', ['Authentication', '$location',
     //通过事件名称进行发出信息
     this.emit = function(eventName, data) {
       if (this.socket) {
-        console.log('chat.service.client:[eventName:' + eventName +
-          ',data:' + JSON.stringify(data)) + ']';
         this.socket.emit(eventName, data);
       }
     };

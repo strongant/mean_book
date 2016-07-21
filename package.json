@@ -49,6 +49,8 @@
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "gulp": "^3.9.1",
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.9.2",
+    "should": "^10.0.0",
+    "supertest": "^1.2.0"
   }
 }
