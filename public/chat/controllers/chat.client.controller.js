@@ -2,13 +2,14 @@ angular.module('chat').controller('ChatController', ['$scope', 'Socket',
   function($scope, Socket) {
     $scope.messages = [];
     Socket.on('chatMessage', function(message) {
+      console.log('chat.client.controller:message:' + message);
       $scope.messages.push(message);
     });
     $scope.sendMessage = function() {
       var message = {
         text: this.messageText
       };
-      console.log('message:' + message);
+      console.log('message:' + JSON.stringify(message));
       Socket.emit('chatMessage', message);
       this.messageText = '';
     };

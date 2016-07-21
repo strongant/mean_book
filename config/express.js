@@ -17,8 +17,8 @@ module.exports = function(db) {
 
   //添加对Socket.io的支持
   var app = express();
-  var server = http.Server(app);
-  var io = socketio(server);
+  var server = http.createServer(app);
+  var io = socketio.listen(server);
   //添加对Socket.io的支持
 
   app.use(express.static('./public'));
@@ -37,6 +37,7 @@ module.exports = function(db) {
   //用于存储session信息
   var mongoStore = new MongoStore({
     url: config.db
+      //db: db.connection.db
   });
 
   app.use(session({
@@ -55,6 +56,6 @@ module.exports = function(db) {
   require('../app/routes/articles.server.routes.js')(app);
   //加入socketio支持
   require('./socketio')(server, io, mongoStore);
-  server.listen(3000);
-  return app;
+
+  return server;
 };

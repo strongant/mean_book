@@ -9,7 +9,7 @@ module.exports = function(io, socket) {
     message.type = 'message';
     message.created = Date.now();
     message.username = socket.request.user.username;
-    io.emit('chat message ', message);
+    io.emit('chatMessage', message);
   });
 
 
