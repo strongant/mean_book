@@ -8,6 +8,7 @@ angular.module('chat').controller('ChatController', ['$scope', 'Socket',
       var message = {
         text: this.messageText
       };
+      console.log('message:' + message);
       Socket.emit('chatMessage', message);
       this.messageText = '';
     };
