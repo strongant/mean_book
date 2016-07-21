@@ -1,1 +1,1 @@
-angular.module('caht', []);
+angular.module('chat', []);

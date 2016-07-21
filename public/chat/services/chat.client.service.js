@@ -1,4 +1,3 @@
-//创建chat服务
 angular.module('chat').service('Socket', ['Authentication', '$location',
   '$timeout',
   function(Authentication, $location, $timeout) {
