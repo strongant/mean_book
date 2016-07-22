@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mochawesome Report Card</title>
+    
+    <link rel="stylesheet" href="css/mochawesome.css">
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="report-info-cnt">
+          <h1 class="report-title">mean_book</h1>
+          <h3 class="report-date">Friday, July 22 2016, 05:02pm</h3>
+        </div>
+        <div class="nav-right">
+          <div class="quick-summary-cnt">
+              <ul class="list-unstyled quick-summary">
+                <li class="qs-item summary-duration" title="Duration">254<span>MS</span></li>
+                <li class="qs-item summary-suites" title="Suites">4</li>
+                <li class="qs-item summary-tests" title="Tests">4</li>
+                <li class="qs-item summary-passes" title="Passed" data-filter="passed">4</li>
+                <li class="qs-item summary-failures" title="Failed" data-filter="failed">0</li>
+                <li class="qs-item summary-pending" title="Pending" data-filter="pending">0</li>
+              </ul>          </div>
+          <button class="nav-menu-btn open-menu"><i class="icon-menu"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Report Summary -->
+    <div class="summary">
+      <div class="container">
+          <div class="row">
+            <div class="summary-col summary-duration">
+              <h1 class="summary-count">254<span>MS</span></h1>
+              <h4 class="summary-label">MS</h4>
+            </div>
+            <div class="summary-col summary-suites" title="Suites">
+              <h1 class="summary-count">4</h1>
+              <h4 class="summary-label">Suites</h4>
+            </div>
+            <div class="summary-col summary-tests" title="Tests">
+              <h1 class="summary-count">4</h1>
+              <h4 class="summary-label">Tests</h4>
+            </div>
+            <div class="summary-col summary-passes" data-filter="passed" title="Passed">
+              <h1 class="summary-count">4</h1>
+              <h4 class="summary-label">Passed</h4>
+            </div>
+            <div class="summary-col summary-failures" data-filter="failed" title="Failed">
+              <h1 class="summary-count">0</h1>
+              <h4 class="summary-label">Failed</h4>
+            </div>
+            <div class="summary-col summary-pending" data-filter="pending" title="Pending">
+              <h1 class="summary-count">0</h1>
+              <h4 class="summary-label">Pending</h4>
+            </div>
+          </div>      </div>
+    </div>
+    <div class="statusbar">
+      <div class="container">
+          <div class="row">
+            <div class="status-item status-item-pending-pct">0% Pending</div>
+            <div class="status-item status-item-passing-pct success">100% Passing</div>
+          </div>      </div>
+    </div>
+
+    <!-- Suites -->
+    <div class="details container">
+            <section class="suite-wrap">
+          <div id="e47d51c9-1197-4fda-a111-9087168aac69" class="suite has-suites has-tests has-passed">
+            <h3 class="suite-title">Articles Controller Unit Tests</h3>
+            <h5 class="suite-filename">/app/tests/articles.server.controller.test.js</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="e47d51c9-1197-4fda-a111-9087168aac69" class="suite-chart" width="50" height="50" data-total-passes="1" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">68 ms</li>
+                <li class="suite-summary-item tests">1</li>
+                <li class="suite-summary-item passed">1</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#e47d51c9-1197-4fda-a111-9087168aac69-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="e47d51c9-1197-4fda-a111-9087168aac69-test-list" class="list-group test-list collapse in">
+                    <div id="32c2f443-20b7-4827-8f26-0d57807caa2d" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Should be able to get the article
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#32c2f443-20b7-4827-8f26-0d57807caa2d > .test-code.collapse">Code</button>
+              <span class="test-duration medium">68 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">request.get(<span class="hljs-string">'/api/articles/'</span> + article.id)<br>  .set(<span class="hljs-string">'Accept'</span>, <span class="hljs-string">"application/json"</span>)<br>  .expect(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-regexp">/json/</span>)<br>  .expect(<span class="hljs-number">200</span>)<br>  .end(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, res</span>) </span>{<br>    res.body.should.be.an.instanceof(<span class="hljs-built_in">Object</span>).and.have.property(<br>      <span class="hljs-string">'title'</span>,<br>      article.title);<br>    res.body.should.have.property(<span class="hljs-string">'content'</span>, article.content);<br>    done();<br>  });</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>        </div>
+              </div>
+            </div>
+        
+              <section class="suite-wrap">
+          <div id="ea814dec-56cf-4463-aa0a-d57f9c4bd643" class="suite has-tests has-passed">
+            <h3 class="suite-title">Testing the GET methods</h3>
+            <h5 class="suite-filename">/app/tests/articles.server.controller.test.js</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="ea814dec-56cf-4463-aa0a-d57f9c4bd643" class="suite-chart" width="50" height="50" data-total-passes="1" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">17 ms</li>
+                <li class="suite-summary-item tests">1</li>
+                <li class="suite-summary-item passed">1</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#ea814dec-56cf-4463-aa0a-d57f9c4bd643-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="ea814dec-56cf-4463-aa0a-d57f9c4bd643-test-list" class="list-group test-list collapse in">
+                    <div id="65d99906-8263-42e3-9902-cf8807942e4b" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Should be able to get the list of articles
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#65d99906-8263-42e3-9902-cf8807942e4b > .test-code.collapse">Code</button>
+              <span class="test-duration fast">17 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">request.get(<span class="hljs-string">'/api/articles/'</span>)<br>  .set(<span class="hljs-string">'Accept'</span>, <span class="hljs-string">"application/json"</span>)<br>  .expect(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-regexp">/json/</span>)<br>  .expect(<span class="hljs-number">200</span>)<br>  .end(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, res</span>) </span>{<br>    res.body.should.be.an.instanceof(<span class="hljs-built_in">Array</span>).and.have.lengthOf(<br>      <span class="hljs-number">1</span>);<br>    res.body[<span class="hljs-number">0</span>].should.have.property(<span class="hljs-string">'title'</span>, article.title);<br>    res.body[<span class="hljs-number">0</span>].should.have.property(<span class="hljs-string">'content'</span>, article.content);<br>    done();<br>  });</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+        
+          </div>
+        </section>
+            <section class="suite-wrap">
+          <div id="dbb712d1-0a15-4edf-9269-cc57f210d512" class="suite has-suites">
+            <h3 class="suite-title">Article Model Unit Tests:</h3>
+            <h5 class="suite-filename">/app/tests/articles.server.model.test.js</h5>
+        
+              <section class="suite-wrap">
+          <div id="1900d5f7-7ee9-4034-af90-bb7bbcae4847" class="suite has-tests has-passed">
+            <h3 class="suite-title">Testing the save method</h3>
+            <h5 class="suite-filename">/app/tests/articles.server.model.test.js</h5>
+            <!-- Suite Chart -->
+            <div class="suite-chart-wrap">
+              <canvas id="1900d5f7-7ee9-4034-af90-bb7bbcae4847" class="suite-chart" width="50" height="50" data-total-passes="2" data-total-failures="0" data-total-pending="0" data-total-skipped="0"></canvas>
+            </div>
+            <div class="suite-data-wrap">
+              <!-- Suite Summary -->
+              <ul class="suite-summary list-unstyled">
+                <li class="suite-summary-item duration">1 ms</li>
+                <li class="suite-summary-item tests">2</li>
+                <li class="suite-summary-item passed">2</li>
+                <li class="suite-summary-item failed">0</li>
+                <li class="suite-summary-item pending">0</li>
+              </ul>
+              <!-- Test Info -->
+              <div class="suite-test-wrap">
+                <div class="suite-test-header" data-toggle="collapse" data-target="#1900d5f7-7ee9-4034-af90-bb7bbcae4847-test-list">
+                  <h4 class="suite-test-header-title">Tests</h4>
+                </div>
+                <div id="1900d5f7-7ee9-4034-af90-bb7bbcae4847-test-list" class="list-group test-list collapse in">
+                    <div id="f1dc9798-d15a-4464-aed9-d04156afa518" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Should be able to save without problems
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#f1dc9798-d15a-4464-aed9-d04156afa518 > .test-code.collapse">Code</button>
+              <span class="test-duration fast">0 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">article.save(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{<br>  should.not.exist(err);<br>});</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>            <div id="ac7efc15-e7a7-43a4-8f68-a18c3fc0ef59" class="list-group-item test passed">
+          <!-- Test Heading -->
+          <div class="test-heading">
+            <h4 class="test-title">
+              <span class="text-muted hidden"> it </span>
+              Should not be able to save an without a title
+            </h4>
+            <div class="pull-right">
+              <button class="btn btn-link btn-sm toggle-btn toggle-code collapsed" data-toggle="collapse" data-target="#ac7efc15-e7a7-43a4-8f68-a18c3fc0ef59 > .test-code.collapse">Code</button>
+              <span class="test-duration fast">1 ms</span>
+            </div>
+          </div>
+          <!-- Test Errors -->
+          <!-- Test Code -->
+          <div class="test-code collapse">
+            <pre><code class="hljs javascript small">article.title = <span class="hljs-string">''</span>;<br>article.save(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{<br>  should.exist(err);<br>});</code></pre>
+          </div>
+          <!-- Test Error Stack -->
+        </div>        </div>
+              </div>
+            </div>
+        
+        
+          </div>
+        </section>
+        
+          </div>
+        </section>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Report generated by <a href="http://adamgruber.github.io/mochawesome/" target="_blank">mochawesome</a>.<br>Designed and built by <a href="https://github.com/adamgruber" target="_blank">adamgruber</a>. &copy;2016.</p>
+      </div>
+    </footer>
+
+    <!-- Nav Menu -->
+    <div class="nav-menu-wrap">
+      <div class="menu-overlay close-menu"></div>
+      <nav class="menu">
+        <button class="nav-menu-btn close-menu"><i class="icon-failed"></i></button>
+        <ul class="list-unstyled main-menu">
+                <li class="nav-menu-item">
+                <a href="#e47d51c9-1197-4fda-a111-9087168aac69" class="nav-menu-item-link has-passes">Articles Controller Unit Tests</a>
+                  <ul class="list-unstyled sub-menu">
+                    <li class="nav-menu-item">
+                <a href="#ea814dec-56cf-4463-aa0a-d57f9c4bd643" class="nav-menu-item-link has-passes">Testing the GET methods</a>
+            </li>
+                  </ul>
+            </li>
+                <li class="nav-menu-item">
+                <a href="#dbb712d1-0a15-4edf-9269-cc57f210d512" class="nav-menu-item-link">Article Model Unit Tests:</a>
+                  <ul class="list-unstyled sub-menu">
+                    <li class="nav-menu-item">
+                <a href="#1900d5f7-7ee9-4034-af90-bb7bbcae4847" class="nav-menu-item-link has-passes">Testing the save method</a>
+            </li>
+                  </ul>
+            </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/vendor.js"></script>
+    <script src="js/mochawesome.js"></script>
+  </body>
+</html>

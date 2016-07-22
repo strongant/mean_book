@@ -1,5 +1,5 @@
-var app = require('../../server.js'),
-  request = require('supertest'),
+var app = require('../../server'),
+  request = require('supertest')(app),
   should = require('should'),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
@@ -28,44 +28,46 @@ describe('Articles Controller Unit Tests', function() {
         done();
       });
     });
-
   });
-});
 
+  //获取所有文章信息
+  describe('Testing the GET methods', function() {
+    it('Should be able to get the list of articles', function(done) {
+      request.get('/api/articles/')
+        .set('Accept', "application/json")
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end(function(err, res) {
+          res.body.should.be.an.instanceof(Array).and.have.lengthOf(
+            1);
+          res.body[0].should.have.property('title', article.title);
+          res.body[0].should.have.property('content', article.content);
+          done();
+        });
+    });
+  });
 
-describe('Testing the GET methods', function() {
-  it('Should be able to get the list of articles', function(done) {
-    request(app).get('/api/articles/')
+  //通过文章编号获取一篇文章
+  it('Should be able to get the article', function(done) {
+    request.get('/api/articles/' + article.id)
       .set('Accept', "application/json")
       .expect('Content-Type', /json/)
       .expect(200)
       .end(function(err, res) {
-        res.body.should.be.an.Array.and.have.lengthOf(1);
-        res.body[0].should.be.have.property('title', article.ttile);
-        res.body[0].should.be.have.property('content', article.content);
+        res.body.should.be.an.instanceof(Object).and.have.property(
+          'title',
+          article.title);
+        res.body.should.have.property('content', article.content);
 
         done();
       });
   });
-});
+
+  afterEach(function(done) {
+    Article.remove().exec();
+    User.remove().exec();
+    done();
+  });
 
 
-it('Should be able to get the article', function(done) {
-  request(app).get('/api/articles/' + article._id)
-    .set('Accept', "application/json")
-    .expect('Content-Type', /json/)
-    .expect(200)
-    .end(function(err, res) {
-      res.body.should.be.an.Object.and.have.property('title', article.ttile);
-      res.body.should.have.property('content', article.content);
-
-      done();
-    });
-});
-
-
-afterEach(function(done) {
-  Article.remove().exec();
-  User.remove().exec();
-  done();
 });

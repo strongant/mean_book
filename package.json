@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": " mocha --reporter spec app/tests",
     "pre-run": "npm install",
     "cpre-run": "cnpm install",
     "http-server": "http-server -p 9090",
@@ -49,6 +49,8 @@
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "gulp": "^3.9.1",
+    "mocha": "^2.5.3",
+    "mochawesome": "^1.4.0",
     "nodemon": "^1.9.2",
     "should": "^10.0.0",
     "supertest": "^1.2.0"
