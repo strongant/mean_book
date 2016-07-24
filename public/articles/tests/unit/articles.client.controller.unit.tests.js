@@ -21,6 +21,9 @@ describe('Testing Articles Controller', function() {
       });
     });
   });
+
+
+
   it('Should be registered', function() {
     expect(ArticlesController).toBeDefined();
   });
@@ -32,26 +35,24 @@ describe('Testing Articles Controller', function() {
     expect(_scope.update).toBeDefined();
   });
 
-
-
-  /*it(
-    'Should have a find method that usres $resource to retrieve a list of articles',
+  it(
+    'Should have a find method that uses $resource to retrieve a list of articles',
     inject(function(Articles) {
       inject(function($httpBackend) {
         var sampleArticle = new Articles({
           title: "An Article about MEAN",
           content: 'MEAN rocks'
         });
-        var samepleArticles = [sampleArticle];
+        var sampleArticles = [sampleArticle];
         $httpBackend.expectGET('api/articles').respond(
-          samepleArticles);
+          sampleArticles);
         _scope.find();
         $httpBackend.flush();
-        expect(_scope.articles).toEqualData(samepleArticles);
+        expect(_scope.articles).toEqualData(sampleArticles);
 
       });
     }));
-  it(
+  /*it(
     'Should have a findone method that users $resource to retreive a single of article',
     inject(
       function(Articles) {
