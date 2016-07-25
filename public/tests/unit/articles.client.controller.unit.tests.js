@@ -6,7 +6,7 @@ describe('Testing Articles Controller', function() {
     jasmine.addMatchers({
       toEqualData: function(util, customEqualityTesters) {
         return {
-          compile: function(actual, expected) {
+          compare: function(actual, expected) {
             return {
               pass: angular.equals(actual, expected)
             };
@@ -39,20 +39,31 @@ describe('Testing Articles Controller', function() {
     'Should have a find method that uses $resource to retrieve a list of articles',
     inject(function(Articles) {
       inject(function($httpBackend) {
+        // Create a sample article
         var sampleArticle = new Articles({
-          title: "An Article about MEAN",
-          content: 'MEAN rocks'
+          title: 'An Article about MEAN',
+          content: 'MEAN rocks!'
         });
+
+        // Create a sample articles list
         var sampleArticles = [sampleArticle];
+
+        // Define a request assertion
         $httpBackend.expectGET('api/articles').respond(
           sampleArticles);
-        _scope.find();
-        $httpBackend.flush();
-        expect(_scope.articles).toEqualData(sampleArticles);
 
+        // Call the controller's 'find' method
+        _scope.find();
+
+        // Flush the mock HTTP results
+        $httpBackend.flush();
+
+        // Test the results
+        expect(_scope.articles).toEqualData(sampleArticles);
       });
     }));
-  /*it(
+
+  it(
     'Should have a findone method that users $resource to retreive a single of article',
     inject(
       function(Articles) {
@@ -62,9 +73,8 @@ describe('Testing Articles Controller', function() {
             content: 'MEAN rocks'
           });
           $routeParams.articleId = 'abcdef123456789012345678';
-          $httpBackend.expectGET(
-            '/api\/articles\/([0-9a-fA-F]{24})$/').respond(
-            sampleArticle);
+          $httpBackend.expectGET(/api\/articles\/([0-9a-fA-F]{24})$/)
+            .respond(sampleArticle);
           _scope.findOne();
           $httpBackend.flush();
           expect(_scope.article).toEqualData(sampleArticle);
@@ -72,6 +82,4 @@ describe('Testing Articles Controller', function() {
         });
       }
     ));
-*/
-
 });

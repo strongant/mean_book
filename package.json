@@ -26,6 +26,7 @@
   ],
   "repository": "https://github.com/strongant/mean_book.git",
   "dependencies": {
+    "angular-mocks": "^1.5.8",
     "body-parser": "^1.8.0",
     "compression": "^1.0.11",
     "connect-flash": "^0.1.1",
@@ -47,12 +48,15 @@
     "socket.io": "^1.4.8"
   },
   "devDependencies": {
+    "angular-mocks": "^1.5.8",
     "browser-sync": "^2.13.0",
     "gulp": "^3.9.1",
+    "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
     "karma": "^1.1.1",
     "karma-chrome-launcher": "^1.0.1",
     "karma-jasmine": "^1.0.2",
+    "karma-junit-reporter": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.1",
     "mocha": "^2.5.3",
     "mochawesome": "^1.4.0",
