@@ -34,6 +34,17 @@ module.exports = function(grunt) {
           configFile: 'protractor.conf.js'
         }
       }
+    },
+    jshint: {
+      all: {
+        src: ['server.js', 'config/**/*.js', 'app/**/*.js',
+          'public/js/*.js', 'public/modules/**/*.js'
+        ]
+
+      }
+    },
+    csslint: {
+      all: 'public/modules/**/*.css'
     }
   });
 
@@ -42,7 +53,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-protractor-runner');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
 
   grunt.registerTask('default', ['env:dev', 'nodemon']);
   grunt.registerTask('test', ['env:test', 'mochaTest', 'karma', 'protractor']);
+  grunt.registerTask('lint', ['jshint', 'csslint']);
+
 };

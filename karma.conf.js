@@ -11,7 +11,7 @@ module.exports = function(config) {
       'public/application.js',
       'public/*[!lib]*/*.js',
       'public/*[!lib]*/*[!tests]*/*.js',
-      'public/tests/unit/*.js'
+      'public/*[!lib]*/tests/unit/*.js'
     ],
     //设置Karma测试结果报告的方式
     reporters: ['progress'],
