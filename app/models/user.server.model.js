@@ -23,7 +23,7 @@ var UserSchema = new Schema({
   password: {
     type: String,
     validate: [function(password) {
-      return password.length >= 6
+      return password.length >= 6;
     }, 'Password should be longer']
   },
   salt: {
