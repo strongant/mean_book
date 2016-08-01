@@ -1,10 +1,11 @@
+
 exports.render = function(req, res) {
   if (req.session.lastVisit) {
     console.log(req.session.lastVisit);
   }
   req.session.lastVisit = new Date();
   console.log(__dirname + 'index.server.controller');
-  console.log(req.user);
+  //console.log(req.user);
   var figureurl_qq_2, figureurl_2;
   if (req.user&&req.user.provider==='qq') {
     if (req.user && req.user.prividerData) {
